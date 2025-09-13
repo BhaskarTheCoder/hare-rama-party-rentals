@@ -7,7 +7,7 @@ import Home from "./pages/Home";
 // import Services from "./pages/Services";
 // import Packages from "./pages/Packages";
 // import Catering from "./pages/Catering";
-// import Contact from "./pages/Contact";
+import ContactForm from "./pages/ContactForm";
 
 function App() {
   return (
@@ -18,10 +18,11 @@ function App() {
         {/* <Route path="/about" element={<About/>} />
         <Route path="/services" element={<Services/>} />
         <Route path="/packages" element={<Packages/>} />
-        <Route path="/catering" element={<Catering/>} />
-        <Route path="/contact" element={<Contact/>} /> */}
+        <Route path="/catering" element={<Catering/>} /> */}
+        <Route path="/contact" element={<ContactForm/>} />
       </Routes>
       {/* Floating contact buttons */}
+      <ContactForm />
       <FloatingContact />
     </>
   );
