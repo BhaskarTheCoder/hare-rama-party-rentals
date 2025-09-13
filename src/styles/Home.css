@@ -1,0 +1,100 @@
+.home-page {
+  font-family: 'Arial', sans-serif;
+}
+
+/* -------- Banner -------- */
+.banner {
+  height: 80vh;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.banner-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.3);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: #fff;
+}
+
+.banner-title {
+  font-size: 3rem;
+  font-weight: bold;
+  animation: logoPulse 3s infinite;
+}
+
+.banner-subtitle {
+  font-size: 1.5rem;
+  margin-top: 10px;
+}
+
+/* Pulse animation for logo */
+@keyframes logoPulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.08); }
+  100% { transform: scale(1); }
+}
+
+/* -------- Items Section -------- */
+.items-section {
+  padding: 60px 20px;
+  text-align: center;
+  background: #f9f9f9;
+}
+
+.items-section h2 {
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+  color: #222;
+}
+
+.items-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 25px;
+  justify-items: center;
+}
+
+.item-card {
+  background: #fff;
+  border-radius: 15px;
+  padding: 15px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.item-card img {
+  max-width: 100%;
+  height: 120px;
+  object-fit: contain;
+}
+
+.item-card p {
+  margin-top: 10px;
+  font-weight: 600;
+  color: #333;
+}
+
+.item-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 24px rgba(0,0,0,0.15);
+}
+
+/* -------- Fireworks canvas -------- */
+.fireworks {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
