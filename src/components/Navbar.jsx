@@ -51,7 +51,7 @@ export default function Navbar() {
                 className="logo-image"
               />
             </div>
-            <span className="logo-text">Hare Rama Party Rentals</span>
+            {/* <span className="logo-text">Hare Rama Party Rentals</span> */}
           </NavLink>
 
           {/* Hamburger toggle (visible on small screens) */}
