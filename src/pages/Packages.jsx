@@ -12,7 +12,7 @@ export default function Packages() {
         <p className="package-desc">
           With our all-inclusive event package, you’re not just planning an event;
           you’re embarking on an unforgettable experience. From concept to execution,
-          we take care of it all, so you can savor every moment. Let Vinessa Events
+          we take care of it all, so you can savor every moment. Let Hare Rama Events
           transform your vision into reality and create an event that exceeds your
           expectations.
         </p>
@@ -51,7 +51,7 @@ export default function Packages() {
           terms of what’s included in the package and it allows you to create a
           unique event that reflects your personal style and interest. <br />
           <br />
-          📞 Please call <strong>+1 (949) 607-6318</strong> or email us at{" "}
+          📞 Please call <h1><strong>+1 (949) 607-6318</strong></h1> or email us at <h1>{"hareramaevents@gmail.com"}</h1>
           <a href="mailto:" className="gold-link">
             
           </a>{" "}
