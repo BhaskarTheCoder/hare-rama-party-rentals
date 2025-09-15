@@ -1,5 +1,6 @@
 "use client";
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import "../styles/Home.css";
 
 const bannerImages = [
@@ -18,12 +19,27 @@ export default function Home() {
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentIndex((prev) => (prev + 1) % bannerImages.length);
-    }, 2000); // rotate every 2 seconds
+    }, 2000);
     return () => clearInterval(interval);
   }, []);
 
   return (
     <section className="hero">
+      {/* 🎉 Welcome Banner */}
+      <div className="welcome-banner">
+        <h1>🎉 Welcome Members! 🎉</h1>
+        <div className="confetti"></div>
+      </div>
+
+      {/* CTA Button */}
+      <div className="trip-message">
+        <h2>Plan Your Trip With Us!</h2>
+        <Link to="/contact" className="trip-button">
+          Plan Your Trip
+        </Link>
+      </div>
+
+      {/* Images */}
       <div className="hero-left">
         <div className="banner-track">
           {[...bannerImages, ...bannerImages].map((img, idx) => (
@@ -36,6 +52,8 @@ export default function Home() {
           ))}
         </div>
       </div>
+
+      
     </section>
   );
 }

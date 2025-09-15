@@ -1,7 +1,7 @@
 .hero {
   display: flex;
   width: 100%;
-  background: #000;
+  background: gold;
   overflow: hidden;
   position: relative;
   font-family: 'Cinzel', serif;
@@ -65,4 +65,117 @@
 @keyframes scrollX {
   0% { transform: translateX(0); }
   100% { transform: translateX(-50%); }
+}
+
+
+.hero-right {
+  flex: 3; /* 30% width */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  color: white;
+  text-align: center;
+  z-index: 2; /* above fireworks */
+}
+
+.hero-right h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: gold;
+}
+
+.hero-right p {
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+}
+
+.trip-button {
+  background: gold;
+  color: rgb(0, 0, 0);
+  padding: 0.8rem 1.5rem;
+  border-radius: 8px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: background 0.3s ease;
+}
+
+.trip-button:hover {
+  background: #ffcc00;
+}
+
+.trip-message{
+  position: absolute;
+  top: 70%;
+  width: 100%;
+  text-align: center;
+  z-index: 10;
+}
+
+.trip-message h2 {
+  color: #ffcc00;
+}
+
+/* === Welcome Banner === */
+.welcome-banner {
+  position: absolute;
+  top: 10px;
+  width: 100%;
+  text-align: center;
+  z-index: 10;
+}
+
+.welcome-banner h1 {
+  font-size: 2.5rem;
+  color: gold;
+  text-shadow: 2px 2px 8px #000;
+  animation: pulse 2s infinite;
+}
+
+/* === Confetti/Blast Effect === */
+.confetti {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 0;
+  pointer-events: none;
+  overflow: visible;
+}
+
+.confetti::before,
+.confetti::after {
+  content: "🎆 🎇 🎉 🎊";
+  font-size: 2rem;
+  position: absolute;
+  animation: fall 3s linear infinite;
+  color: gold;
+}
+
+.confetti::before {
+  left: 20%;
+  animation-delay: 0s;
+}
+
+.confetti::after {
+  right: 20%;
+  animation-delay: 1.5s;
+}
+
+@keyframes fall {
+  0% {
+    transform: translateY(-50px) scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(200px) scale(0.5);
+    opacity: 0;
+  }
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.1); color: white; }
+  100% { transform: scale(1); }
 }
