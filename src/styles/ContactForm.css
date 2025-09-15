@@ -1,48 +1,49 @@
 /* ContactForm.css */
 
+/* Base Section */
 .contact-section {
-  background-color: #000; /* Black background */
-  color: #ffd700; /* Gold text */
+  background-color: #000;
+  color: #ffd700;
   max-width: 800px;
-  margin-top: 50px;
-  margin-left: auto;
-  margin-right: auto;
-  padding: 40px 20px 50px 20px;
-  border: 2px solid #ffd700; /* Gold border around section */
+  margin: 50px auto;
+  padding: clamp(20px, 5vw, 40px) clamp(15px, 5vw, 20px) clamp(30px, 5vw, 50px) clamp(15px, 5vw, 20px);
+  border: 2px solid #ffd700;
   border-radius: 15px;
   box-shadow: 0 0 20px rgba(255, 215, 0, 0.3);
   font-family: 'Cinzel', serif;
+  overflow: hidden; /* Prevent child overflow from vibrating */
 }
 
 .contact-section h2 {
-  font-size: 2.5rem;
-  margin-bottom: 10px;
+  font-size: clamp(1.8rem, 5vw, 2.5rem);
+  margin-bottom: clamp(10px, 2vw, 20px);
   text-align: center;
   color: #ffd700;
 }
 
 .contact-section p {
-  font-size: 1.2rem;
+  font-size: clamp(1rem, 3vw, 1.2rem);
   text-align: center;
-  margin-bottom: 30px;
-  color: #fff8dc; /* Light gold for paragraphs */
+  margin-bottom: clamp(20px, 4vw, 30px);
+  color: #fff8dc;
 }
 
+/* Form */
 .contact-form {
   display: flex;
   flex-direction: column;
-  gap: 15px;
+  gap: clamp(10px, 2vw, 15px);
 }
 
 .contact-form input,
 .contact-form select,
 .contact-form textarea {
-  background-color: #111; /* Dark input background */
-  color: #ffd700; /* Gold text */
-  border: 1px solid #ffd700; /* Gold border */
+  background-color: #111;
+  color: #ffd700;
+  border: 1px solid #ffd700;
   border-radius: 8px;
-  padding: 12px 15px;
-  font-size: 1rem;
+  padding: clamp(10px, 2vw, 15px);
+  font-size: clamp(0.9rem, 2vw, 1rem);
   outline: none;
   transition: all 0.3s ease;
 }
@@ -51,7 +52,7 @@
 .contact-form select:focus,
 .contact-form textarea:focus {
   border-color: #ffcc00;
-  box-shadow: 0 0 10px rgba(255, 204, 0, 0.5);
+  box-shadow: 0 0 clamp(5px, 1vw, 10px) rgba(255, 204, 0, 0.5);
 }
 
 .contact-form select {
@@ -63,40 +64,56 @@
 
 .contact-form textarea {
   resize: vertical;
-  min-height: 100px;
+  min-height: clamp(80px, 15vw, 120px);
 }
 
+/* Submit Button */
 button[type="submit"] {
   background-color: #ffd700;
   color: #000;
   font-weight: bold;
   border: none;
-  padding: 12px 20px;
+  padding: clamp(10px, 2vw, 12px) clamp(15px, 4vw, 20px);
   border-radius: 10px;
   cursor: pointer;
-  font-size: 1.1rem;
+  font-size: clamp(1rem, 2vw, 1.1rem);
   transition: all 0.3s ease;
 }
 
 button[type="submit"]:hover {
   background-color: #ffcc00;
   transform: scale(1.05);
-  box-shadow: 0 0 15px rgba(255, 204, 0, 0.5);
+  box-shadow: 0 0 clamp(10px, 2vw, 15px) rgba(255, 204, 0, 0.5);
 }
 
+/* Errors */
 .error {
   color: #ff4d4d;
-  font-size: 0.9rem;
+  font-size: clamp(0.8rem, 1.5vw, 0.9rem);
   margin-top: -10px;
-  margin-bottom: 10px;
+  margin-bottom: clamp(5px, 1vw, 10px);
 }
 
-/* Responsive */
+/* Calendar / date picker icon */
+.contact-form input[type="date"]::-webkit-calendar-picker-indicator,
+.contact-form input[type="time"]::-webkit-calendar-picker-indicator {
+  filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(100%) contrast(100%);
+  cursor: pointer;
+}
+
+.contact-form input[type="date"]::-moz-calendar-picker-indicator,
+.contact-form input[type="time"]::-moz-calendar-picker-indicator {
+  color: #ffd700;
+  cursor: pointer;
+}
+
+/* Responsive Adjustments */
 @media screen and (max-width: 768px) {
   .contact-section {
-    padding: 30px 15px;
+    margin: 30px 10px;
+    padding: 25px 15px 30px 15px;
   }
-
+  
   .contact-section h2 {
     font-size: 2rem;
   }
@@ -104,26 +121,47 @@ button[type="submit"]:hover {
   .contact-section p {
     font-size: 1rem;
   }
+
+  button[type="submit"] {
+    font-size: 1rem;
+  }
 }
 
-/* Add padding at the top of input, select, and textarea */
-.contact-form input,
-.contact-form select,
-.contact-form textarea {
-  padding-top: 15px; /* Top padding added */
+/* Extra Small Screens (<540px) */
+@media screen and (max-width: 540px) {
+  .contact-section {
+    margin: 20px 10px;
+    padding: 20px 10px 25px 10px;
+  }
+
+  .contact-section h2 {
+    font-size: 1.8rem;
+  }
+
+  .contact-section p {
+    font-size: 0.95rem;
+  }
+
+  .contact-form input,
+  .contact-form select,
+  .contact-form textarea {
+    font-size: 0.9rem;
+    padding: 10px;
+  }
+
+  button[type="submit"] {
+    font-size: 0.95rem;
+    padding: 10px 15px;
+  }
 }
 
-/* Calendar / date picker and time picker icon color */
-.contact-form input[type="date"]::-webkit-calendar-picker-indicator,
-.contact-form input[type="time"]::-webkit-calendar-picker-indicator {
-  filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(100%) contrast(100%);
-  cursor: pointer;
+/* Prevent vibrate/scroll issues globally on mobile */
+html, body {
+  overflow-x: hidden;
+  overscroll-behavior-y: contain;
+  touch-action: pan-y;
 }
+/* End of ContactForm.css */
 
-/* For Firefox (date & time) */
-.contact-form input[type="date"]::-moz-calendar-picker-indicator,
-.contact-form input[type="time"]::-moz-calendar-picker-indicator {
-  color: #ffd700; /* Gold color */
-  cursor: pointer;
-}
+
 

@@ -1,74 +1,70 @@
-/* Import Google Fonts: Cinzel for the main text and Montserrat for the subtext */
-@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Montserrat:wght@400&display=swap');
-
 /* ---------- Navbar (desktop + mobile) ---------- */
+
+/* ---------- Navbar (fluid responsive) ---------- */
 .navbar {
   position: sticky;
   top: 0;
   z-index: 1000;
-  background: black;               /* white bg */
+  background: black;
   box-shadow: 2px 2px 6px #E5B80B;
   border-bottom: 1px solid rgba(0,0,0,0.03);
   font-family: 'Cinzel', serif;
-  font-size: 2.4rem; /* Adjust size as needed */
   font-weight: 900;
-  font-family: 'Cinzel', serif;
+  font-size: clamp(1.5rem, 2vw + 1rem, 2.4rem); /* fluid font size */
 }
 
 .nav-inner {
   margin: 0 auto;
   display: flex;
-  align-items: left;
+  align-items: center;
   justify-content: space-between;
-  
+  padding: 0 clamp(10px, 2vw, 20px); /* fluid padding */
 }
 
 .logo {
   display: inline-flex;
   align-items: center;
-  gap: 10px;
+  gap: clamp(5px, 1vw, 10px);
   text-decoration: none;
   color: #222;
   font-weight: 700;
-  font-size: 1.05rem;
-  margin-right: auto; /* ensures logo stays at far left */
+  font-size: clamp(0.9rem, 1vw + 0.5rem, 1.05rem);
+  margin-right: auto;
 }
 
 .logo-image {
-  display: inline-flex;
-  font-size: 1.35rem;
-  transform-origin: left;
-  height: 150px; /* adjust size as needed */
-  width: auto; /* optional pulse effect */
-  padding-left: 0;
+  height: clamp(80px, 10vw, 150px);
+  width: auto;
   animation: logoPulse 3s ease-in-out infinite;
 }
+
 @keyframes logoPulse {
   0%   { transform: scale(1); }
   50%  { transform: scale(0.9); }
   100% { transform: scale(1); }
 }
 
-
-
-/* Nav links (desktop) */
+/* Nav links (desktop + mobile fluid) */
 .nav-links {
   list-style: none;
   display: flex;
-  gap: 18px;
+  gap: clamp(8px, 1vw, 18px);
   align-items: center;
   margin: 0;
-  padding: 20px;
+  padding: clamp(10px, 1vw, 20px);
 }
 
 .nav-links li a {
-  color:#E5B80B;
+  color: #E5B80B;
   letter-spacing: 2px;
   text-decoration: none;
-  padding: 8px 10px;
+  padding: clamp(6px, 0.5vw, 10px) clamp(8px, 1vw, 12px);
   border-radius: 8px;
   font-weight: bolder;
+  font-size: clamp(0.85rem, 1vw + 0.5rem, 1rem); /* fluid font size */
+  transition: font-size 0.2s ease;
 }
+
 .nav-links li a:hover {
   color: #222;
   background: linear-gradient(90deg, #E5B80B 0%, #FFD700 100%);
@@ -78,15 +74,6 @@
   animation: bgSlide 1s linear forwards;
 }
 
-@keyframes bgSlide {
-  0% { background-position: 100% 0; }
-  100% { background-position: 0 0; }
-}
-
-
-
-
-/* active link */
 .nav-links li a.active {
   position: relative;
   color: #E5B80B;
@@ -110,59 +97,67 @@
   100% { background-position: 200% center; }
 }
 
+@keyframes bgSlide {
+  0% { background-position: 100% 0; }
+  100% { background-position: 0 0; }
+}
 
-/* Hamburger button (hidden on wide screens) */
+/* Hamburger button */
 .nav-toggle {
   display: none;
   background: transparent;
   border: none;
   cursor: pointer;
-  padding: 8px;
-  margin-left: 8px;
+  padding: clamp(4px, 1vw, 8px);
+  margin-left: clamp(4px, 1vw, 8px);
 }
 
 .hamburger-line {
   display: block;
-  width: 22px;
-  height: 2px;
-  background: #222;
-  margin: 4px 0;
-  transition: transform 0.2s ease, opacity 0.2s ease;
+  width: clamp(16px, 3vw, 22px);
+  height: clamp(2px, 0.3vw, 2px);
+  background: #E5B80B; /* yellow for mobile */
+  margin: clamp(2px, 0.5vw, 4px) 0;
+  transition: transform 0.2s ease, opacity 0.2s ease, background 0.2s ease;
   border-radius: 2px;
 }
 
-/* ---------- Mobile styles ---------- */
+/* ---------- Mobile menu ---------- */
 @media (max-width: 860px) {
-  .logo-text { font-size: 0.95rem; } /* slightly smaller */
   .nav-toggle { display: inline-block; }
 
-  /* Hide links by default, show via .open */
   .nav-links {
     position: absolute;
-    top: 64px;
-    right: 12px;
-    width: 220px;
+    top: clamp(50px, 6vw, 64px);
+    right: clamp(10px, 2vw, 12px);
+    width: clamp(180px, 40vw, 220px);
     flex-direction: column;
     background: #fff;
-    padding: 12px;
-    gap: 8px;
+    padding: clamp(8px, 2vw, 12px);
+    gap: clamp(6px, 1vw, 8px);
     border-radius: 10px;
     box-shadow: 0 8px 20px rgba(0,0,0,0.12);
     display: none;
   }
+
   .nav-links.open {
     display: flex;
   }
+
   .nav-links li a {
-    padding: 10px;
-    width: 100%;
+    font-size: clamp(0.85rem, 2vw, 1rem);
   }
 }
 
-/* further shrink on small phones */
+/* Very small devices */
 @media (max-width: 420px) {
-  .logo-text { display: none; } /* show only the emoji icon */
-  .nav-inner { padding: 10px 12px; }
-}
+  .logo-text { display: none; }
+  .nav-inner { padding: clamp(6px, 2vw, 12px); }
 
-/* ---------- End Navbar ---------- */
+  .nav-links li a { font-size: clamp(0.75rem, 1.5vw, 0.85rem); }
+
+  .hamburger-line {
+    width: clamp(14px, 8vw, 18px);
+    height: clamp(1.5px, 0.2vw, 2px);
+  }
+}

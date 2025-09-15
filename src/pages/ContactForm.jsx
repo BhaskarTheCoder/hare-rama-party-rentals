@@ -187,6 +187,10 @@ export default function ContactForm() {
           {loading ? "Submitting..." : "Submit"}
         </button>
       </form>
+
+      <div>
+        <div className="space"></div>
+      </div>
     </section>
   );
 }
