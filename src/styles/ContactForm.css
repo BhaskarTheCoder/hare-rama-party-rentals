@@ -1,21 +1,31 @@
-.contact-form-container {
-  max-width: 600px;
-  margin: 50px auto;
-  padding: 30px;
-  background: #ffffff;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  text-align: center;
+/* ContactForm.css */
+
+.contact-section {
+  background-color: #000; /* Black background */
+  color: #ffd700; /* Gold text */
+  max-width: 800px;
+  margin-top: 50px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 40px 20px 50px 20px;
+  border: 2px solid #ffd700; /* Gold border around section */
+  border-radius: 15px;
+  box-shadow: 0 0 20px rgba(255, 215, 0, 0.3);
+  font-family: 'Cinzel', serif;
 }
 
-.contact-form-container h2 {
-  color: #222;
+.contact-section h2 {
+  font-size: 2.5rem;
   margin-bottom: 10px;
+  text-align: center;
+  color: #ffd700;
 }
 
-.contact-form-container p {
-  color: #555;
-  margin-bottom: 20px;
+.contact-section p {
+  font-size: 1.2rem;
+  text-align: center;
+  margin-bottom: 30px;
+  color: #fff8dc; /* Light gold for paragraphs */
 }
 
 .contact-form {
@@ -25,55 +35,95 @@
 }
 
 .contact-form input,
+.contact-form select,
 .contact-form textarea {
-  padding: 12px;
-  border: 1px solid #ddd;
+  background-color: #111; /* Dark input background */
+  color: #ffd700; /* Gold text */
+  border: 1px solid #ffd700; /* Gold border */
   border-radius: 8px;
-  font-size: 16px;
+  padding: 12px 15px;
+  font-size: 1rem;
   outline: none;
-  transition: border-color 0.3s;
+  transition: all 0.3s ease;
 }
 
 .contact-form input:focus,
+.contact-form select:focus,
 .contact-form textarea:focus {
-  border-color: #25d366; /* WhatsApp green for consistency */
+  border-color: #ffcc00;
+  box-shadow: 0 0 10px rgba(255, 204, 0, 0.5);
 }
 
-.terms {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  text-align: left;
-  font-size: 14px;
-  color: #444;
-}
-
-.terms a {
-  color: #007bff;
-  text-decoration: none;
-}
-
-.terms a:hover {
-  text-decoration: underline;
-}
-
-.contact-form button {
-  padding: 14px;
-  border: none;
-  border-radius: 8px;
-  background: #25d366;
-  color: white;
-  font-size: 18px;
+.contact-form select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
   cursor: pointer;
-  transition: background 0.3s, transform 0.2s;
 }
 
-.contact-form button:hover:enabled {
-  background: #1eb346;
-  transform: translateY(-2px);
+.contact-form textarea {
+  resize: vertical;
+  min-height: 100px;
 }
 
-.contact-form button:disabled {
-  background: #ccc;
-  cursor: not-allowed;
+button[type="submit"] {
+  background-color: #ffd700;
+  color: #000;
+  font-weight: bold;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
 }
+
+button[type="submit"]:hover {
+  background-color: #ffcc00;
+  transform: scale(1.05);
+  box-shadow: 0 0 15px rgba(255, 204, 0, 0.5);
+}
+
+.error {
+  color: #ff4d4d;
+  font-size: 0.9rem;
+  margin-top: -10px;
+  margin-bottom: 10px;
+}
+
+/* Responsive */
+@media screen and (max-width: 768px) {
+  .contact-section {
+    padding: 30px 15px;
+  }
+
+  .contact-section h2 {
+    font-size: 2rem;
+  }
+
+  .contact-section p {
+    font-size: 1rem;
+  }
+}
+
+/* Add padding at the top of input, select, and textarea */
+.contact-form input,
+.contact-form select,
+.contact-form textarea {
+  padding-top: 15px; /* Top padding added */
+}
+
+/* Calendar / date picker and time picker icon color */
+.contact-form input[type="date"]::-webkit-calendar-picker-indicator,
+.contact-form input[type="time"]::-webkit-calendar-picker-indicator {
+  filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(100%) contrast(100%);
+  cursor: pointer;
+}
+
+/* For Firefox (date & time) */
+.contact-form input[type="date"]::-moz-calendar-picker-indicator,
+.contact-form input[type="time"]::-moz-calendar-picker-indicator {
+  color: #ffd700; /* Gold color */
+  cursor: pointer;
+}
+

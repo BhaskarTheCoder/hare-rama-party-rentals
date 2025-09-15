@@ -1,0 +1,82 @@
+.packages {
+  background: #000;
+  color: #fff;
+  padding: 60px 20px;
+  text-align: center;
+  font-family: 'Cinzel', serif;
+}
+
+.packages-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 40px;
+  color: gold;
+  text-transform: uppercase;
+}
+
+.package-card {
+  background: #111;
+  border: 2px solid gold;
+  border-radius: 12px;
+  padding: 30px 25px;
+  margin-bottom: 40px;
+  box-shadow: 0 0 15px rgba(255, 215, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: left;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.package-card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 0 25px gold;
+}
+
+.package-heading {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: gold;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.package-desc {
+  font-size: 1.1rem;
+  margin-bottom: 20px;
+  line-height: 1.6;
+  color: #ddd;
+  text-align: center;
+}
+
+.package-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  columns: 2; /* split into 2 columns */
+  column-gap: 30px;
+  font-size: 1rem;
+  color: #fff;
+}
+
+.package-list li {
+  margin: 6px 0;
+  padding: 6px 10px;
+  border-left: 3px solid gold;
+  transition: background 0.3s ease, padding-left 0.3s ease;
+}
+
+.package-list li:hover {
+  background: rgba(255, 215, 0, 0.1);
+  padding-left: 15px;
+}
+
+.gold-link {
+  color: gold;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.gold-link:hover {
+  text-decoration: underline;
+}

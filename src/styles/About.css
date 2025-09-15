@@ -1,0 +1,54 @@
+.about-page {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 60px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  font-family: 'Cinzel', serif;
+  color: #fff; /* base white text for readability on black */
+  background-color: #000; /* black background */
+}
+
+.about-hero {
+  text-align: center;
+}
+
+.about-hero h1 {
+  font-size: 3rem;
+  color: gold; /* gold heading */
+  margin-bottom: 10px;
+  text-shadow: 0 0 6px rgba(255, 215, 0, 0.8); /* subtle glow */
+}
+
+.about-hero h2 {
+  font-size: 2rem;
+  color: #f0e68c; /* lighter gold/yellow */
+  margin-bottom: 20px;
+}
+
+.about-hero p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  color: #ddd; /* soft gray for readability */
+}
+
+.about-mission, .about-philosophy {
+  background: rgba(255, 215, 0, 0.05); /* subtle gold tint */
+  padding: 30px;
+  border-left: 6px solid gold;
+  border-radius: 10px;
+}
+
+.about-mission h3, .about-philosophy h3 {
+  font-size: 1.8rem;
+  margin-bottom: 15px;
+  color: gold;
+  text-shadow: 0 0 4px rgba(255, 215, 0, 0.7);
+}
+
+.about-mission p, .about-philosophy p {
+  font-size: 1.1rem;
+  line-height: 1.5;
+  color: #eee; /* soft off-white */
+}
